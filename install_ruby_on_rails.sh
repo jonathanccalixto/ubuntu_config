@@ -1,19 +1,21 @@
-sudo aptitude update
-sudo aptitude full-upgrade -y
-
 # install ruby
-sudo aptitude install -y build-essential libssl-dev libreadline-dev curl
-sudo aptitude install -y ruby-full libopenssl-ruby ruby1.8-dev 
+sudo aptitude install -y build-essential libssl-dev libreadline-dev curl ruby-full libopenssl-ruby ruby1.8-dev libnotify-bin libxml2-dev libxslt1-dev
 
-#install ruby gems
-wget http://rubyforge.org/frs/download.php/45905/rubygems-1.3.1.tgz
-tar xzvf rubygems-1.3.1.tgz
-cd rubygems-1.3.1 && sudo ruby setup.rb
-sudo ln -s /usr/bin/gem1.8 /usr/bin/gem && cd .. && sudo rm rubygems-1.3.1/ -rf &&  sudo rm rubygems-1.3.1.tgz/ -f
+# install ruby gems
+
+wget -c http://rubyforge.org/frs/download.php/70696/rubygems-1.3.7.tgz
+tar xzvf rubygems-1.3.7.tgz
+cd rubygems-1.3.7 && sudo ruby setup.rb
+
+#wget -c http://rubyforge.org/frs/download.php/45905/rubygems-1.3.1.tgz
+#tar xzvf rubygems-1.3.1.tgz
+#cd rubygems-1.3.1 && sudo ruby setup.rb
+
+sudo ln -s /usr/bin/gem1.8 /usr/bin/gem && cd .. && sudo rm -rf rubygems*
 sudo gem update --system
 
 #install rvm
-sudo gem install rvm
+sudo gem install rack rvm
 sudo rvm-install
 #################################################################################################################
 #    *  For JRuby (if you wish to use it) you will need:
@@ -28,22 +30,19 @@ sudo rvm-install
 #
 #       $ aptitude install curl mono-2.0-devel
 #################################################################################################################
-#install ree
-rvm install ree
 
-#install rails
+# install rvm rubies
+rvm install ree
+rvm use ree --default
+rvm install 1.8.7
+rvm install 1.9.1
+rvm install jruby
+
+# install rails
 gem install rails
 
-#install mysql
-sudo aptitude install -y mysql-server-5.1 mysql-client-5.1 mysql-gui-tools-common mysqltoolkit libmysql-ruby libmysqlclient-dev libmysqlclient15-dev
+# install mysql
+sudo aptitude install -y mysql-server-5.1 mysql-client-5.1 libmysql-ruby libmysqlclient-dev libmysqlclient15-dev
 gem install mysql
 
-#install java
-sudo aptitude install -y sun-java6-jdk
 
-#install gvim
-sudo aptitude install -y vim-gnome vim-ruby vim-rails gvim
-
-#instal gmate
-sudo apt-add-repository ppa:ubuntu-on-rails/ppa
-sudo aptitude install -y gedit-gmate gedit-plugins
