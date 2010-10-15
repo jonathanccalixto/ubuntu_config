@@ -1,52 +1,52 @@
 echo "# update ubuntu"
-sudo aptitude update
-sudo aptitude full-upgrade -y
+sudo apt-get update; sudo apt-get dist-upgrade -y
 
 echo "# install the default programs for compiling packages"
-sudo aptitude install -y build-essential
+sudo apt-get install -y build-essential
 
 echo "# install java"
-sudo aptitude install -y sun-java6-jdk
+sudo apt-get install -y sun-java6-jdk
 
 echo "# install mysql"
-sudo aptitude install -y mysql-server-5.1 mysql-client-5.1 mysql-gui-tools-common mysqltoolkit
+sudo apt-get install -y mysql-server-5.1 mysql-client-5.1 mysql-gui-tools-common
 
 echo "# install ssh client and server"
-sudo aptitude install -y openssh-blacklist-extra openssh-client openssh-server
+sudo apt-get install -y openssh-blacklist-extra openssh-client openssh-server
 
 echo "# install git and svn"
-sudo aptitude install -y gitg git-cola subversion-tools nautilus-script-collection-svn
+sudo apt-get install -y gitg git-cola #subversion-tools nautilus-script-collection-svn
 
 echo "# install gvim"
-sudo aptitude install -y vim-gnome vim-ruby vim-rails gvim vim-full
+sudo apt-get install -y vim-gnome vim-gtk
 
 echo "# instal gmate"
-sudo apt-add-repository ppa:ubuntu-on-rails/ppa
-sudo aptitude install -y ttf-liberation gedit-plugins gedit-gmate
+#sudo apt-add-repository ppa:ubuntu-on-rails/ppa
+sudo apt-get install -y ttf-liberation gedit-plugins # gedit-gmate
 
 echo "# install caffeine"
 sudo add-apt-repository ppa:caffeine-developers/ppa
-sudo aptitude update
-sudo aptitude install -y caffeine
+sudo apt-get update
+sudo apt-get install -y caffeine
 
 echo "# install ntp"
-sudo aptitude install -y ntp ntpdate
+sudo apt-get install -y ntp ntpdate
 
 echo "# install awn"
-sudo aptitude install -y libqt4-core libqt4-dev awn-applets-c-extras awn-applets-extras
+sudo apt-get install -y libqt4-core libqt4-dev awn-applets-c-extras awn-applets-python-extras
 
 echo "# install samba"
-sudo aptitude install -y samba nautilus-share
+sudo apt-get install -y samba nautilus-share
 
 echo "# install audacius and vlc"
-sudo aptitude install -y audacious-plugins-extra vlc vlc-nox vlc-plugin-pulse
+sudo apt-get install -y audacious-plugins vlc vlc-nox vlc-plugin-pulse
 
 echo "# install google-chrome"
-wget -c http://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-sudo dpkg -i google-chrome-stable_current_amd64.deb
+wget -c http://dl.google.com/linux/direct/google-chrome-stable_current_i386.deb
+sudo dpkg -i google-chrome-stable_current_i386.deb
 
-echo "# install gmail notify"
-sudo aptitude install -y gmail-notify
+#echo "# install gmail notify"
+#sudo apt-get install -y gmail-notify
 
 echo "# install broffice.org"
-sudo aptitude install -y broffice.org
+sudo apt-get install -y broffice.org
+
