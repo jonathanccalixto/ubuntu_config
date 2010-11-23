@@ -19,6 +19,9 @@ sudo apt-get install -y gitg git-cola #subversion-tools nautilus-script-collecti
 echo "# install gvim"
 sudo apt-get install -y vim-gnome vim-gtk
 
+echo "# nautilus plugins"
+sudo apt-get install -y nautilus-open-terminal
+
 echo "# instal gmate"
 #sudo apt-add-repository ppa:ubuntu-on-rails/ppa
 sudo apt-get install -y ttf-liberation gedit-plugins # gedit-gmate
