@@ -17,7 +17,7 @@ echo "# install git and svn"
 sudo apt-get install -y gitg git-cola #subversion-tools nautilus-script-collection-svn
 
 echo "# install gvim"
-sudo apt-get install -y vim-gnome vim-gtk
+sudo apt-get install -y vim-gnome vim-gtk ctags
 
 echo "# nautilus plugins"
 sudo apt-get install -y nautilus-open-terminal

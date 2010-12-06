@@ -11,7 +11,7 @@ sudo ln -s /usr/bin/gem1.8 /usr/bin/gem; cd ..; sudo rm -rf *rubygems*
 sudo gem update --system
 
 echo "#install rvm"
-sudo gem install rack rvm
+sudo gem install rack rvm fuzzy_file_finder
 rvm-install
 #################################################################################################################
 #    *  For JRuby (if you wish to use it) you will need:
