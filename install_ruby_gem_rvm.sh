@@ -2,6 +2,9 @@ echo "# upgrade ubuntu"
 sudo apt-get update
 sudo apt-get dist-upgrade -y
 
+echo "# install mysql"
+sudo apt-get install -y mysql-server-5.1 mysql-client-5.1 libmysql-ruby libmysqlclient-dev libmysqlclient15-dev
+
 echo "# install ruby"
 sudo apt-get install -y build-essential libssl-dev libreadline-dev curl ruby-full libopenssl-ruby ruby1.8-dev libnotify-bin libxml2-dev libxslt1-dev
 
@@ -11,8 +14,9 @@ sudo ln -s /usr/bin/gem1.8 /usr/bin/gem; cd ..; sudo rm -rf *rubygems*
 sudo gem update --system
 
 echo "#install rvm"
-sudo gem install rack rvm fuzzy_file_finder
-rvm-install
+sudo gem install rack fuzzy_file_finder
+#rvm-install
+mkdir -p ~/.rvm/src/ && cd ~/.rvm/src && rm -rf ./rvm/ && git clone --depth 1 git://github.com/wayneeseguin/rvm.git && cd rvm && ./install
 #################################################################################################################
 #    *  For JRuby (if you wish to use it) you will need:
 #
@@ -26,23 +30,4 @@ rvm-install
 #
 #       $ apt-get install curl mono-2.0-devel
 #################################################################################################################
-
-echo "# reloading bash"
-source ~/.bashrc
-
-echo "# install rvm rubies"
-rvm install ree
-rvm install 1.8.7
-rvm install 1.9.2
-rvm install jruby
-
-rvm use 1.9.2 --default
-
-echo "# install rails"
-gem install bundler
-
-echo "# install mysql"
-sudo apt-get install -y mysql-server-5.1 mysql-client-5.1 libmysql-ruby libmysqlclient-dev libmysqlclient15-dev
-gem install mysql
-
 
