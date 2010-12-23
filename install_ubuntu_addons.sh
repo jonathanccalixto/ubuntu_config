@@ -1,5 +1,5 @@
 echo "# update ubuntu"
-sudo apt-get update; sudo apt-get dist-upgrade -y
+sudo apt-get update; sudo apt-get dist-upgrade -y; sudo apt-get autoclean -y; sudo apt-get autoremove -y
 
 echo "# install the default programs for compiling packages"
 sudo apt-get install -y build-essential
@@ -47,8 +47,8 @@ echo "# install google-chrome"
 wget -c http://dl.google.com/linux/direct/google-chrome-stable_current_i386.deb
 sudo dpkg -i google-chrome-stable_current_i386.deb
 
-#echo "# install gmail notify"
-#sudo apt-get install -y gmail-notify
+echo "# install hot messengers"
+sudo apt-get install -y pidgin skype
 
 echo "# install broffice.org"
 sudo apt-get install -y broffice.org
