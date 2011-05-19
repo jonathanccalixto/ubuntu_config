@@ -2,7 +2,7 @@ echo "# update ubuntu"
 sudo apt-get update; sudo apt-get dist-upgrade -y; sudo apt-get autoclean -y; sudo apt-get autoremove -y
 
 echo "# install the default programs for compiling packages"
-sudo apt-get install -y build-essential
+sudo apt-get install -y build-essential libcurl4-openssl-dev
 
 echo "# install java"
 sudo apt-get install -y sun-java6-jdk
